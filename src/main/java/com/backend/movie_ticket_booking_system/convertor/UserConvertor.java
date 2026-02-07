@@ -19,7 +19,7 @@ public class UserConvertor {
                 .password(password)
                 .build();
     }
-
+@SuppressWarnings("unused")
     public static UserResponse userToUserDto(User user) {
 
         return UserResponse.builder()

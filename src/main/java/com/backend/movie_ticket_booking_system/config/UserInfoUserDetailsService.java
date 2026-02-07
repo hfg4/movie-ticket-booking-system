@@ -1,15 +1,15 @@
 package com.backend.movie_ticket_booking_system.config;
 
-import java.util.Optional;
-
+import com.backend.movie_ticket_booking_system.entities.User;
+import com.backend.movie_ticket_booking_system.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import com.backend.movie_ticket_booking_system.entities.User;
-import com.backend.movie_ticket_booking_system.repositories.UserRepository;
+import java.util.Optional;
 
 @Component
 public class UserInfoUserDetailsService implements UserDetailsService {
@@ -18,7 +18,7 @@ public class UserInfoUserDetailsService implements UserDetailsService {
     private UserRepository repository;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public @Nullable UserDetails loadUserByUsername(@Nullable String username) throws UsernameNotFoundException {
         Optional<User> userInfo = repository.findByEmailId(username);
 
         return userInfo.map(UserInfoUserDetails::new)
