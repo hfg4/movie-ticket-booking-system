@@ -1,15 +1,14 @@
 package com.backend.movie_ticket_booking_system.config;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
-
+import com.backend.movie_ticket_booking_system.entities.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.backend.movie_ticket_booking_system.entities.User;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserInfoUserDetails implements UserDetails {
 
