@@ -16,7 +16,6 @@ import java.util.Objects;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -44,6 +43,7 @@ public class Movie {
 
     @OneToMany(mappedBy = "movie",cascade = CascadeType.ALL)
     @ToString.Exclude
+    @Builder.Default
     private List<Show> shows = new ArrayList<>();
 
     @Override

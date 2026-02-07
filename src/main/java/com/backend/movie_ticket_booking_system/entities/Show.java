@@ -15,7 +15,6 @@ import java.util.Objects;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -39,10 +38,12 @@ public class Show {
 
     @OneToMany(mappedBy = "show", cascade = CascadeType.ALL)
     @ToString.Exclude
+    @Builder.Default
     private List<ShowSeat> showSeatList = new ArrayList<>();
 
     @OneToMany(mappedBy = "show", cascade = CascadeType.ALL)
     @ToString.Exclude
+    @Builder.Default
     private List<Ticket> ticketList = new ArrayList<>();
 
     @Override
